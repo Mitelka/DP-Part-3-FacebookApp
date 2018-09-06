@@ -43,9 +43,18 @@ namespace FacebookApp
             this.buttonLogOut = new System.Windows.Forms.Button();
             this.LikestPicButton = new System.Windows.Forms.Button();
             this.MostLikesPic = new System.Windows.Forms.PictureBox();
+            this.settingsButton = new System.Windows.Forms.Button();
+            this.imageNormalPictureBox = new System.Windows.Forms.PictureBox();
+            this.uploadPhotoLabel = new System.Windows.Forms.Label();
+            this.chooseDestButton = new System.Windows.Forms.Button();
+            this.titlePicTextBox = new System.Windows.Forms.TextBox();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.uploadButton = new System.Windows.Forms.Button();
+            this.sortedPicButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MostLikesPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // eventBindingSource
@@ -153,12 +162,98 @@ namespace FacebookApp
             this.MostLikesPic.TabIndex = 26;
             this.MostLikesPic.TabStop = false;
             // 
+            // settingsButton
+            // 
+            this.settingsButton.Location = new System.Drawing.Point(229, 10);
+            this.settingsButton.Margin = new System.Windows.Forms.Padding(2);
+            this.settingsButton.Name = "settingsButton";
+            this.settingsButton.Size = new System.Drawing.Size(104, 37);
+            this.settingsButton.TabIndex = 27;
+            this.settingsButton.Text = "Settings for main form";
+            this.settingsButton.UseVisualStyleBackColor = true;
+            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click_1);
+            // 
+            // imageNormalPictureBox
+            // 
+            this.imageNormalPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.eventBindingSource, "ImageNormal", true));
+            this.imageNormalPictureBox.Location = new System.Drawing.Point(362, 103);
+            this.imageNormalPictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.imageNormalPictureBox.Name = "imageNormalPictureBox";
+            this.imageNormalPictureBox.Size = new System.Drawing.Size(95, 55);
+            this.imageNormalPictureBox.TabIndex = 28;
+            this.imageNormalPictureBox.TabStop = false;
+            // 
+            // uploadPhotoLabel
+            // 
+            this.uploadPhotoLabel.AutoSize = true;
+            this.uploadPhotoLabel.Location = new System.Drawing.Point(374, 184);
+            this.uploadPhotoLabel.Name = "uploadPhotoLabel";
+            this.uploadPhotoLabel.Size = new System.Drawing.Size(83, 13);
+            this.uploadPhotoLabel.TabIndex = 29;
+            this.uploadPhotoLabel.Text = "Upload a photo:";
+            // 
+            // chooseDestButton
+            // 
+            this.chooseDestButton.Location = new System.Drawing.Point(303, 202);
+            this.chooseDestButton.Name = "chooseDestButton";
+            this.chooseDestButton.Size = new System.Drawing.Size(212, 33);
+            this.chooseDestButton.TabIndex = 30;
+            this.chooseDestButton.Text = "Choose a destiniation of your photo";
+            this.chooseDestButton.UseVisualStyleBackColor = true;
+            this.chooseDestButton.Click += new System.EventHandler(this.chooseDestButton_Click);
+            // 
+            // titlePicTextBox
+            // 
+            this.titlePicTextBox.Location = new System.Drawing.Point(501, 161);
+            this.titlePicTextBox.Name = "titlePicTextBox";
+            this.titlePicTextBox.Size = new System.Drawing.Size(114, 20);
+            this.titlePicTextBox.TabIndex = 31;
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Location = new System.Drawing.Point(498, 145);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(123, 13);
+            this.titleLabel.TabIndex = 32;
+            this.titleLabel.Text = "Title to the pic (optional):";
+            // 
+            // uploadButton
+            // 
+            this.uploadButton.Enabled = false;
+            this.uploadButton.Location = new System.Drawing.Point(292, 241);
+            this.uploadButton.Name = "uploadButton";
+            this.uploadButton.Size = new System.Drawing.Size(346, 23);
+            this.uploadButton.TabIndex = 33;
+            this.uploadButton.Text = "Upload!";
+            this.uploadButton.UseVisualStyleBackColor = true;
+            this.uploadButton.Click += new System.EventHandler(this.uploadButton_Click);
+            // 
+            // sortedPicButton
+            // 
+            this.sortedPicButton.Location = new System.Drawing.Point(291, 269);
+            this.sortedPicButton.Margin = new System.Windows.Forms.Padding(2);
+            this.sortedPicButton.Name = "sortedPicButton";
+            this.sortedPicButton.Size = new System.Drawing.Size(347, 56);
+            this.sortedPicButton.TabIndex = 34;
+            this.sortedPicButton.Text = "Click to see your photos by popularity order";
+            this.sortedPicButton.UseVisualStyleBackColor = true;
+            this.sortedPicButton.Click += new System.EventHandler(this.sortedPicButton_Click);
+            // 
             // MainMenuUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(357, 543);
+            this.ClientSize = new System.Drawing.Size(638, 543);
+            this.Controls.Add(this.sortedPicButton);
+            this.Controls.Add(this.uploadButton);
+            this.Controls.Add(this.titleLabel);
+            this.Controls.Add(this.titlePicTextBox);
+            this.Controls.Add(this.chooseDestButton);
+            this.Controls.Add(this.uploadPhotoLabel);
+            this.Controls.Add(this.imageNormalPictureBox);
+            this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.MostLikesPic);
             this.Controls.Add(this.LikestPicButton);
             this.Controls.Add(this.buttonLogOut);
@@ -176,6 +271,7 @@ namespace FacebookApp
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MostLikesPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +289,13 @@ namespace FacebookApp
         private System.Windows.Forms.Button buttonLogOut;
         private System.Windows.Forms.Button LikestPicButton;
         private System.Windows.Forms.PictureBox MostLikesPic;
+        private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.PictureBox imageNormalPictureBox;
+        private System.Windows.Forms.Label uploadPhotoLabel;
+        private System.Windows.Forms.Button chooseDestButton;
+        private System.Windows.Forms.TextBox titlePicTextBox;
+        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Button uploadButton;
+        private System.Windows.Forms.Button sortedPicButton;
     }
 }

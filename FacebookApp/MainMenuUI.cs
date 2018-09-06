@@ -15,6 +15,8 @@
     {
         private Photo m_MaxLikesPhoto = null;
         private MainMenuFacade m_Facade;
+        private SettingsFormUI m_SettingsFormUI;
+        private OpenFileDialog m_OpenFileDialogToPickPicture;
 
         public MainMenuUI(MainMenuFacade i_Facade)
         {
@@ -84,7 +86,7 @@
 
         private void genereateGreetingCardButton_Click_1(object sender, EventArgs e)
         {
-            new GeneratorGreetingCardFormUI().Show();
+            new FilterFriendsToGreetingUI().Show();
         }                   
 
         private void userPictureBox_Click(object sender, EventArgs e)
@@ -95,6 +97,62 @@
         {
             Close();
             FacebookWrapper.FacebookService.Logout(() => { MessageBox.Show("You successfully logged out!"); });
+        }
+
+        private void changeSettings(SettingsObject i_SettingsObject)
+        {
+            this.BackColor = i_SettingsObject.BackgroundColor;
+            this.Text = i_SettingsObject.Title;
+            if (!String.IsNullOrEmpty(i_SettingsObject.PicUrl))
+            {
+                this.userPictureBox.ImageLocation = i_SettingsObject.PicUrl;
+            }
+        }
+
+        private void settingsButton_Click_1(object sender, EventArgs e)
+        {
+            if (m_SettingsFormUI == null)
+            {
+                m_SettingsFormUI = new SettingsFormUI();
+                m_SettingsFormUI.m_NotifyChangeSettings += changeSettings;
+                m_SettingsFormUI.Show();
+            }
+            else
+            {
+                m_SettingsFormUI.Visible = true;
+            }
+        }
+
+        private void chooseDestButton_Click(object sender, EventArgs e)
+        {
+            m_OpenFileDialogToPickPicture.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG";
+            m_OpenFileDialogToPickPicture.ShowDialog();
+            if (!string.IsNullOrEmpty(m_OpenFileDialogToPickPicture.FileName))
+            {
+                uploadButton.Enabled = true;
+            }
+
+        }
+
+        private void uploadButton_Click(object sender, EventArgs e)
+        {
+            string titleOfPic;
+            if (string.IsNullOrEmpty(titlePicTextBox.Text))
+            {
+                titleOfPic = string.Empty;
+            }
+            else
+            {
+                titleOfPic = titlePicTextBox.Text;
+            }
+
+            m_Facade.PostPhoto(m_OpenFileDialogToPickPicture.FileName, titleOfPic);
+            MessageBox.Show("Posted!");
+        }
+
+        private void sortedPicButton_Click(object sender, EventArgs e)
+        {
+            new OrederdPhotosForm().Show();
         }
     }
 }
