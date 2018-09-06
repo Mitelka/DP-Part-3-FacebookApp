@@ -1,6 +1,6 @@
 ﻿namespace FacebookApp
 {
-    partial class OrderedPhotosForm
+    partial class OrederdPhotosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,48 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.labelOrederedPhotos = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.nextPhotoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
+            // labelOrederedPhotos
+            // 
+            this.labelOrederedPhotos.AutoSize = true;
+            this.labelOrederedPhotos.Location = new System.Drawing.Point(33, 20);
+            this.labelOrederedPhotos.Name = "labelOrederedPhotos";
+            this.labelOrederedPhotos.Size = new System.Drawing.Size(0, 20);
+            this.labelOrederedPhotos.TabIndex = 0;
+            // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(80, 47);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox.Location = new System.Drawing.Point(37, 73);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(270, 102);
+            this.pictureBox.Size = new System.Drawing.Size(405, 157);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 2;
+            this.pictureBox.TabIndex = 1;
             this.pictureBox.TabStop = false;
             // 
             // nextPhotoButton
             // 
-            this.nextPhotoButton.Location = new System.Drawing.Point(161, 174);
-            this.nextPhotoButton.Margin = new System.Windows.Forms.Padding(2);
+            this.nextPhotoButton.Location = new System.Drawing.Point(157, 256);
             this.nextPhotoButton.Name = "nextPhotoButton";
-            this.nextPhotoButton.Size = new System.Drawing.Size(111, 33);
-            this.nextPhotoButton.TabIndex = 3;
+            this.nextPhotoButton.Size = new System.Drawing.Size(166, 51);
+            this.nextPhotoButton.TabIndex = 2;
             this.nextPhotoButton.Text = "Next photo";
             this.nextPhotoButton.UseVisualStyleBackColor = true;
             this.nextPhotoButton.Click += new System.EventHandler(this.nextPhotoButton_Click);
             // 
-            // OrderedPhotosForm
+            // OrederdPhotosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(437, 243);
+            this.ClientSize = new System.Drawing.Size(482, 321);
             this.Controls.Add(this.nextPhotoButton);
             this.Controls.Add(this.pictureBox);
-            this.Name = "OrderedPhotosForm";
-            this.Text = "OrderedPhotosForm";
+            this.Controls.Add(this.labelOrederedPhotos);
+            this.Name = "OrederdPhotosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Your photos";
+            this.Load += new System.EventHandler(this.orederdPhotosForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Label labelOrederedPhotos;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button nextPhotoButton;
     }
