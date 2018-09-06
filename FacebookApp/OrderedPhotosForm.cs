@@ -34,6 +34,7 @@
             {
                 m_Iterator = new OrderedPhotosLogic().GetEnumerator();
             }
+
             if (m_Iterator.MoveNext())
             {
                 m_CurrentMostPhotoNumber++;

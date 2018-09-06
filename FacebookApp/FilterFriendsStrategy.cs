@@ -25,6 +25,7 @@
                     filterFriendsResult.AddFirst(friend);
                 }
             }
+
             return filterFriendsResult;
         }
     }

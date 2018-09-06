@@ -66,12 +66,14 @@
                         maxPhoto = photo;
                     }
                 }
+
                 m_CurrentPhoto = maxPhoto;
                 m_CurrentMaxNumLikes = maxLikes;
                 if (maxPhoto != null)
                 {
                     result = true;
                 }
+
                 return result;
             }
 

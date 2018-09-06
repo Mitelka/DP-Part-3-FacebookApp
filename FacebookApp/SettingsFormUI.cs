@@ -55,6 +55,7 @@
             {
                 e.Cancel = true;
             }
+
             Hide();
         }
     }

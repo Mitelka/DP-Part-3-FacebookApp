@@ -1,6 +1,6 @@
 ﻿namespace FacebookApp
 {
-    partial class OrederdPhotosForm
+    public partial class OrederdPhotosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 

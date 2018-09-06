@@ -44,6 +44,7 @@
                     {
                         friendsListBox.Invoke(new Action(() => friendsListBox.Items.Add(friend)));
                     }
+
                     this.Invoke(new Action(() => this.ControlBox = true));
                 }
                 else
@@ -51,7 +52,6 @@
                     this.Invoke(new Action(() => MessageBox.Show("No freinds found! Try again with different search")));
                     this.Invoke(new Action(() => this.Close()));
                 }
-
             }
             catch (InvalidOperationException i_Exception)
             {

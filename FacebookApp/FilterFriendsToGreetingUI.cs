@@ -74,10 +74,12 @@
             {
                 monthString = "0" + monthString;
             }
+
             if (day < 10)
             {
                 dayString = "0" + dayString;
             }
+
             string resultDate = monthString + "/" + dayString;
             return resultDate;
         }
@@ -90,6 +92,7 @@
                 string birthdayToday = getTodayDateInString();
                 result = i_User.Birthday.StartsWith(birthdayToday);
             }
+
             return result;
         }
 

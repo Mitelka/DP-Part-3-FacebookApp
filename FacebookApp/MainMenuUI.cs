@@ -24,6 +24,7 @@
             InitializeComponent();
             showProfilePic();
             userName.Text = "Hello" + " " + m_Facade.GetFirstNameOfUser() + "!";
+            m_OpenFileDialogToPickPicture = openFileDialogToPickPicture;
             userName.Visible = true;
         }
 
@@ -131,7 +132,6 @@
             {
                 uploadButton.Enabled = true;
             }
-
         }
 
         private void uploadButton_Click(object sender, EventArgs e)
